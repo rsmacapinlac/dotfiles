@@ -1,0 +1,17 @@
+macro index <f5> '<enter-command>source ~/.mutt/macapinlac.com<enter>'
+macro index <f6> '<enter-command>source ~/.mutt/boogienet.com<enter>'
+macro index <f7> '<enter-command>source ~/.mutt/gmail.com<enter>'
+
+set move = no # Prevents mutt from asking to move read messages to INBOX
+set imap_keepalive = 900
+
+set markers = no
+set sort = 'threads'
+
+set editor = 'vim'
+
+folder-hook 'macapinlac.com' 'source ~/.mutt/macapinlac.com'
+folder-hook 'boogienet.com' 'source ~/.mutt/boogienet.com'
+
+# load macapinlac.com first
+source ~/.mutt/macapinlac.com
