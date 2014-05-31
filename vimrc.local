@@ -1,2 +1,3 @@
 colorscheme default
 set nowrap
+set listchars=tab:>-,trail:-
