@@ -1,2 +1,3 @@
-user.name=Ritchie Macapinlac
-user.email=rsmacapinlac@boogienet.com
+[user]
+  name = Ritchie Macapinlac
+  email = rsmacapinlac@boogienet.com
