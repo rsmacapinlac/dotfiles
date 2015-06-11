@@ -1,3 +1,5 @@
+[merge]
+  ff = false
 [user]
   name = Ritchie Macapinlac
   email = rsmacapinlac@boogienet.com
