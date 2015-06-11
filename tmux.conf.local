@@ -1,0 +1,8 @@
+bind-key - split-window -v  -c '#{pane_current_path}'
+bind-key \ split-window -h  -c '#{pane_current_path}'
+
+bind c new-window -c '#{pane_current_path}'
+bind-key b break-pane -d
+set-option -g base-index 1
+set-option -g renumber-windows on
+
