@@ -4,11 +4,15 @@ set listchars=tab:>-,trail:-
 
 set colorcolumn=+5
 let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+highlight ColorColumn ctermbg=235 guibg=#999999
 
 set relativenumber
 set number
 
-syntax enable
-set background=light
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
+let g:solarized_termcolors=256
 colorscheme solarized
