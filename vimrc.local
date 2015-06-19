@@ -8,3 +8,7 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 set relativenumber
 set number
+
+syntax enable
+set background=light
+colorscheme solarized
