@@ -21,3 +21,6 @@ set winheight=999
 
 " Use a relative numbering system
 set relativenumber
+
+" Notes directory defined for notes plugin
+let g:notes_directories = ['~/Dropbox/Notes']
