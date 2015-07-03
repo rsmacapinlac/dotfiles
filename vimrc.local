@@ -11,11 +11,13 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
-set winwidth=84
+" set winwidth=84
+set winwidth=5
+set winminwidth=5
+set winwidth=999
 set winheight=5
 set winminheight=5
 set winheight=999
 
 " Use a relative numbering system
 set relativenumber
-" set number
