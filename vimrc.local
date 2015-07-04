@@ -22,5 +22,10 @@ set winheight=999
 " Use a relative numbering system
 set relativenumber
 
-" Notes directory defined for notes plugin
+" Notes.vim configuration
 let g:notes_directories = ['~/Dropbox/Notes']
+let g:notes_title_sync ='rename_file'
+
+" map the localleader to the '\'
+" used for todo.sh plugin
+:let maplocalleader = "\\"

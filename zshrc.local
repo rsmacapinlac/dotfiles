@@ -7,3 +7,7 @@ PATH=$PATH:$HOME/.rvm/bin
 [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 
 alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
+
+# todo alias
+export TODOTXT_DEFAULT_ACTION=ls
+alias t='todo.sh'
