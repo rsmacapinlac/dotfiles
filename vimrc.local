@@ -17,8 +17,7 @@ colorscheme solarized
 :command Wa wa
 
 " Shortcuts
-nnoremap <silent> <C-s> :w<cr>    " Control-S for saving files in normal mode
-inoremap <silent> <C-s> <esc>:w<cr>i  " Control-S for saving files while in insert mode
+nnoremap <silent> <c-f>s :w<cr>    " Control-f-s for saving files in normal mode
 
 " Utilities
 nnoremap <localleader>todo :vsp ~/Dropbox/Todo/todo.txt<cr>
