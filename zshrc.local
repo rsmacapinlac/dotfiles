@@ -15,3 +15,15 @@ stty -ixon
 export TODOTXT_DEFAULT_ACTION=ls
 export TODOTXT_AUTO_ARCHIVE=0
 alias t='todo.sh'
+
+# start-coding setup
+function start-code() {
+  DIRECTORY=~/code/$1
+  if [ -d $DIRECTORY ]; then
+    cd $DIRECTORY
+    tmux new-session -s $1
+  else
+    echo "$1 doesn't exist ($DIRECTORY)"
+  fi
+}
+alias stc=start-code
