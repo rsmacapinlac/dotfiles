@@ -27,3 +27,11 @@ function start-code() {
   fi
 }
 alias stc=start-code
+
+# script to delete and rebuild a rails development db
+function rebuild-rails-db() {
+  rm db/development.sqlite3 && rm db/test.sqlite3
+  rake db:migrate && rake db:seed
+  rake db:test:prepare
+}
+alias rr-db=rebuild-rails-db
