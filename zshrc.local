@@ -8,6 +8,10 @@ PATH=$PATH:$HOME/.rvm/bin
 
 alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
 
+# disable scroll lock
+stty -ixon
+
 # todo alias
 export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_AUTO_ARCHIVE=0
 alias t='todo.sh'
