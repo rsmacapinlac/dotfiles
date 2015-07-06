@@ -20,6 +20,9 @@ colorscheme solarized
 nnoremap <silent> <C-s> :w<cr>    " Control-S for saving files in normal mode
 inoremap <silent> <C-s> <esc>:w<cr>i  " Control-S for saving files while in insert mode
 
+" Utilities
+nnoremap <localleader>todo :vsp ~/Dropbox/Todo/todo.txt<cr>
+
 " set winwidth=84
 set winwidth=5
 set winminwidth=5
