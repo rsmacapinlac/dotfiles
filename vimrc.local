@@ -17,17 +17,19 @@ colorscheme solarized
 :command Wa wa
 
 " Shortcuts
-nnoremap <silent> <c-f>s :w<cr>    " Control-f-s for saving files in normal mode
+nnoremap <c-f>s :w<cr>    " Control-f-s for saving files in normal mode
+nnoremap <localleader>evc  :vsp ~/.vimrc.local<cr> "evc to edit the vimrc.local
+nnoremap <localleader>svc  :so $MYVIMRC<cr> "evc to source the vimrc.local
 
 " Utilities
 nnoremap <localleader>todo :vsp ~/Dropbox/Todo/todo.txt<cr>
 
 " set winwidth=84
-set winwidth=5
-set winminwidth=5
+set winwidth=10
+set winminwidth=10
 set winwidth=999
-set winheight=5
-set winminheight=5
+set winheight=10
+set winminheight=10
 set winheight=999
 
 " Use a relative numbering system
