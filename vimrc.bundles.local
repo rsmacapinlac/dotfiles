@@ -1,4 +1,13 @@
+
+" pretty layout
 Plug 'altercation/vim-colors-solarized'
+
+" replacment for Evernote
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+
+" manage your todo.txt
 Plug 'freitass/todo.txt-vim'
+
+" minimal writer, replacement for focuswriter
+Plug 'junegunn/goyo.vim'
