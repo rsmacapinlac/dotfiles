@@ -6,14 +6,28 @@ PATH=$PATH:$HOME/.rvm/bin
 # Force the terminal to identify as xterm and 256 colors
 [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 
+setopt auto_cd
+cdpath=($HOME/code $HOME)
+
+# script to open up the emo journal in vim
+function emo-journal() {
+  if [ -z "$1" ]; then
+    FILEDATE=$(date "+%Y-%m-%d.txt")
+  else
+    FILEDATE=$1
+  fi
+  FILEPATH="~/Dropbox/Journal/$FILEDATE"
+  vim -c Goyo ~/Dropbox/Journal/$FILEDATE
+}
+
 # script to delete and rebuild a rails development db
 function rebuild-rails-db() {
-  rm db/development.sqlite3 && rm db/test.sqlite3
-  rake db:migrate && rake db:seed
-  rake db:test:prepare
-  # run a rake command like `rake emmanutt:seed_dev`
-  `rake -T | grep $1 | head -n 1 | sed -e /rake.\w+:seed_dev/g`
-  rake db:seed RAILS_ENV=test
+  bundle exec rake db:migrate
+  bundle exec rake db:rollback
+  bundle exec rake db:migrate
+  bundle exec rake db:seed
+  bundle exec rake db:test:prepare
+  bundle exec rake db:seed RAILS_ENV=test
 }
 
 # start-coding setup
@@ -32,6 +46,7 @@ function start-code() {
 alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias stc=start-code # so you can do 'stc <codebase>'
 alias rr-db=rebuild-rails-db # commands to rebuild your rails application db
+alias emo=emo-journal # command to open the emo-journal ala vim
 
 # disable scroll lock
 stty -ixon

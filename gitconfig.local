@@ -1,3 +1,5 @@
 [user]
   name = Ritchie Macapinlac
   email = rsmacapinlac@boogienet.com
+[alias]
+  p = pull
