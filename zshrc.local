@@ -22,8 +22,7 @@ function emo-journal() {
 
 # script to delete and rebuild a rails development db
 function rebuild-rails-db() {
-  bundle exec rake db:migrate
-  bundle exec rake db:rollback
+  rm db/development.sqlite3 && rm db/test.sqlite3
   bundle exec rake db:migrate
   bundle exec rake db:seed
   bundle exec rake db:test:prepare
