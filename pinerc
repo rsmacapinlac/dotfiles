@@ -348,9 +348,9 @@ incoming-folders=
 # List of directories where saved-message folders may be. First one is
 # the default for Saves. Example: Main {host1}mail/[], Desktop mail\[]
 # Syntax: optnl-label {optnl-imap-hostname}optnl-directory-path[]
-folder-collections=macapinlac.com {imap.gmail.com:993/ssl/user=ritchie@macapinlac.com}[],
-	boogienet.com {imap.gmail.com:993/ssl/user=rsmacapinlac@boogienet.com}[],
-	wearejoinery.com {imap.gmail.com:993/ssl/user=ritchie@wearejoinery.com}[]
+folder-collections=macapinlac.com {imap.gmail.com/novalidate-cert/ssl/user=ritchie@macapinlac.com}[],
+	boogienet.com {imap.gmail.com/novalidate-cert/ssl/user=rsmacapinlac@boogienet.com}[],
+	wearejoinery.com {imap.gmail.com/novalidate-cert/ssl/user=ritchie@wearejoinery.com}[]
 
 # List, only needed if nntp-server not set, or news is on a different host
 # than used for NNTP posting. Examples: News *[] or News *{host3/nntp}[]
@@ -368,7 +368,7 @@ address-book=
 global-address-book=
 
 # Set by Alpine; controls beginning-of-month sent-mail pruning.
-last-time-prune-questioned=115.6
+last-time-prune-questioned=116.3
 
 # Set by Alpine; controls display of "new version" message.
 last-version-used=6.20
@@ -479,8 +479,12 @@ personal-print-command=
 personal-print-category=
 
 # Patterns and their actions are stored here.
-patterns-roles=LIT:pattern="/NICK=ritchie@macapinlac.com/FLDTYPE=SPEC/FOLDER={imap.gmail.com:993\/ssl\/user=ritchie@macapinlac.com}INBOX" action="/ROLE=1/FROM=Ritchie Macapinlac <ritchie@macapinlac.com>/SMTP=smtp.gmail.com:587\/tls\/user=ritchie@macapinlac.com/RTYPE=YES/FTYPE=YES/CTYPE=YES",
-	LIT:pattern="/NICK=rsmacapinlac@boogienet.com/FLDTYPE=SPEC/FOLDER={imap.gmail.com:993\/ssl\/user=rsmacapinlac@boogienet.com}INBOX" action="/ROLE=1/FROM=Ritchie Macapinlac <rsmacapinlac@boogienet.com>/SMTP=smtp.gmail.com:587\/tls\/user=rsmacapinlac@boogienet.com/RTYPE=YES/FTYPE=YES/CTYPE=YES"
+patterns-roles=LIT:pattern="/NICK=ritchie@macapinlac.com/FLDTYPE=SPEC/FOLDER={imap.gmail.com:993\/novalidate-cert\/ssl\/user=ritchie@macapinlac.com}INBOX"
+action="/ROLE=1/FROM=Ritchie Macapinlac <ritchie@macapinlac.com>/SMTP=smtp.gmail.com:587\/novalidate-cert\/tls\/user=ritchie@macapinlac.com/RTYPE=YES/FTYPE=YES/CTYPE=YES",
+	LIT:pattern="/NICK=rsmacapinlac@boogienet.com/FLDTYPE=SPEC/FOLDER={imap.gmail.com:993\/novalidate-cert\/ssl\/user=rsmacapinlac@boogienet.com}INBOX"
+action="/ROLE=1/FROM=Ritchie Macapinlac <rsmacapinlac@boogienet.com>/SMTP=smtp.gmail.com:587\/novalidate-cert\/tls\/user=rsmacapinlac@boogienet.com/RTYPE=YES/FTYPE=YES/CTYPE=YES"
+	LIT:pattern="/NICK=ritchie@wearejoinery.com/FLDTYPE=SPEC/FOLDER={imap.gmail.com:993\/novalidate-cert\/ssl\/user=ritchie@wearejoinery.com}INBOX"
+action="/ROLE=1/FROM=Ritchie Macapinlac <ritchie@wearejoinery.com>/SMTP=smtp.gmail.com:587\/novalidate-cert\/tls\/user=ritchie@wearejoinery.com/RTYPE=YES/FTYPE=YES/CTYPE=YES"
 
 # Patterns and their actions are stored here.
 patterns-filters2=
