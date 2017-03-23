@@ -1,7 +1,8 @@
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin:$HOME/bin
+
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Force the terminal to identify as xterm and 256 colors
 [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
@@ -57,7 +58,8 @@ alias emo=emo-journal # command to open the emo-journal ala vim
 stty -ixon
 
 # todo alias
-export TODOTXT_DEFAULT_ACTION=ls
-export TODOTXT_AUTO_ARCHIVE=0
-alias t='todo.sh'
+# export TODOTXT_DEFAULT_ACTION=ls
+# export TODOTXT_AUTO_ARCHIVE=0
+# alias t='todo.sh'
+
 alias fuck='sudo $(fc -ln -1)'
