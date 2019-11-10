@@ -46,3 +46,6 @@ let g:notes_suffix = '.txt'
 
 let mapleader = "\\\\"
 let maplocalleader = "\'"
+
+" Remove warnings if not on VIM 8
+let g:go_version_warning = 0
