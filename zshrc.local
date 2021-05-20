@@ -1,9 +1,6 @@
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/bin:$HOME/go/bin
 
-# GO lang path
-GOPATH=$HOME/go
-
 # eval "$(rbenv init -)"
 
 # Load RVM into a shell session *as a function*
@@ -14,18 +11,24 @@ PATH=/usr/local/rvm/bin:$PATH
 [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 
 setopt auto_cd
-cdpath=($HOME/code $HOME)
+cdpath=($HOME/workspace $HOME)
 
 # script to open up the emo journal in vim
-function emo-journal() {
+function journal() {
   if [ -z "$1" ]; then
-    FILEDATE=$(date "+%Y-%m-%d.txt")
+    FILENAME=$(date "+%Y-%m-%d.md")
   else
-    FILEDATE=$1
+    FILENAME=$1.md
   fi
-  FILEPATH="~/Dropbox/Journal/$FILEDATE"
-  vim -c Goyo ~/Dropbox/Journal/$FILEDATE
+
+  FILEPATH=$(date "+%Y/%m/%d %a")
+  FULLPATH="$HOME/Dropbox/Journal/$FILEPATH/$FILENAME"
+  if [ ! -f $FULLPATH ]; then
+    touch "$FULLPATH"
+  fi
+  vim -c Goyo $FULLPATH
 }
+# vim -c Goyo ~/Dropbox/Journal/$FILEDATE
 
 # script to delete and rebuild a rails development db
 function rebuild-rails-db() {
@@ -58,7 +61,8 @@ function start-code() {
 alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias stc=start-code # so you can do 'stc <codebase>'
 alias rr-db=rebuild-rails-db # commands to rebuild your rails application db
-alias emo=emo-journal # command to open the emo-journal ala vim
+alias j=journal # command to open the emo-journal ala vim
+alias fuck='sudo $(fc -ln -1)'
 
 # disable scroll lock
 stty -ixon
@@ -68,4 +72,3 @@ stty -ixon
 # export TODOTXT_AUTO_ARCHIVE=0
 # alias t='todo.sh'
 
-alias fuck='sudo $(fc -ln -1)'
