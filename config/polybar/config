@@ -133,11 +133,11 @@ separator =
 ;dim-value = 1.0
 
 tray-position = right
-tray-detached = false
-tray-maxsize = 20
+;tray-detached = false
+;tray-maxsize = 20
 tray-background = ${colors.background}
-tray-offset-x = 0
-tray-offset-y = 0
+;tray-offset-x = 0
+;tray-offset-y = 0
 tray-padding = 4
 tray-scale = 1.0
 
@@ -1008,7 +1008,7 @@ format-prefix = "  "
 format-prefix-foreground = #fefefe
 format-foreground = #fefefe
 format-background = #8d62ad
-label = "%date% %time% "
+label = "%date% %time%   "
 #################################################################
 
 [module/ewmh]
