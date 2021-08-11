@@ -43,7 +43,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 exec --no-startup-id /home/ritchie/Applications/NextCloud.AppImage
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id feh --bg-scale --bg-fill --randomize ~/Dropbox/Wallpapers
 # exec --no-startup-id compton -b
 
@@ -205,10 +205,10 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        position bottom
-#        status_command i3status -c ~/.config/i3status/config
-#}
+bar {
+        position top
+        status_command i3status -c ~/.config/i3status/config
+}
 
 # Focus doesn't follow mouse
 focus_follows_mouse no

@@ -17,8 +17,8 @@ order += "ethernet _first_"
 # order += "battery all"
 # order += "disk /"
 # order += "load"
-order += "cpu_usage"
-order += "memory"
+# order += "cpu_usage"
+# order += "memory"
 order += "tztime local"
 
 wireless _first_ {

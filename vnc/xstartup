@@ -8,5 +8,6 @@ xsetroot -solid grey
 export XKL_XMODMAP_DISABLE=1
 # /etc/X11/Xsession
 
-i3 &
 # xrandr --size 1920x1080
+i3
+# startx
