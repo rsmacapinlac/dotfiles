@@ -1,0 +1,2 @@
+# Ignore Mutt password files
+mutt/pwd*

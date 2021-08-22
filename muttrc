@@ -1,0 +1,19 @@
+# Folder hooks
+folder-hook 'account.macapinlac.com' 'source ~/.mutt/account.macapinlac.com'
+folder-hook 'account.boogienet.com' 'source ~/.mutt/account.boogienet.com'
+
+# Default account
+# source ~/.mutt/account.macapinlac.com
+# source ~/.mutt/account.boogienet.com
+
+# Macros for switching accounts
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.macapinlac.com<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.boogienet.com<enter><change-folder>!<enter>'
+
+# Fetch mail shortcut
+bind index G imap-fetch-mail
+
+# Sidebar configuration
+
+set sidebar_visible = yes
+set sidebar_width   = 20
