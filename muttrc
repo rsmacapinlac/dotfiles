@@ -1,19 +1,11 @@
-# Folder hooks
-folder-hook 'account.macapinlac.com' 'source ~/.mutt/account.macapinlac.com'
-folder-hook 'account.boogienet.com' 'source ~/.mutt/account.boogienet.com'
+
+# default colors, and mapped behaviors
+source ~/.mutt/behaviors-colors
 
 # Default account
-# source ~/.mutt/account.macapinlac.com
-# source ~/.mutt/account.boogienet.com
+# source ~/.mutt/boogienet.com.muttrc
 
 # Macros for switching accounts
-macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.macapinlac.com<enter><change-folder>!<enter>'
-macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.boogienet.com<enter><change-folder>!<enter>'
-
-# Fetch mail shortcut
-bind index G imap-fetch-mail
-
-# Sidebar configuration
-
-set sidebar_visible = yes
-set sidebar_width   = 20
+macro index,pager i1 '<sync-mailbox><enter-command>source ~/.mutt/macapinlac.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to ritchie@macapinlac.com"
+macro index,pager i2 '<sync-mailbox><enter-command>source ~/.mutt/boogienet.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to rsmacapinlac@boogienet.com"
+macro index,pager i3 '<sync-mailbox><enter-command>source ~/.mutt/gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to rsmacapinlac@gmail.com"
