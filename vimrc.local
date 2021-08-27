@@ -3,7 +3,8 @@
 let mapleader = "\\"
 let maplocalleader = "\'"
 
-set nowrap
+" set nowrap
+set wrap linebreak nolist
 set listchars=tab:>-,trail:-
 
 " create a color column for the 80 character mark

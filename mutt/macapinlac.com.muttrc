@@ -1,6 +1,8 @@
 set imap_user = "ritchie@macapinlac.com"
 # set smtp_url = "smtp://ritchie@macapinlac.com@smtp.gmail.com:587/"
 
+# msmtprc cannot be symbolicly linked (will get permission denied) copy from
+# NextCloud
 set sendmail = "msmtp -a ritchie@macapinlac.com"
 
 # mbsync drops mail here
@@ -17,7 +19,7 @@ unset signature
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
-mailboxes "=INBOX" "=!Packages" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash"
+mailboxes "=INBOX" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=!Packages" "=!Projects" "=!Projects/Andrew's Computer Build" "=!Projects/Edmonton Condo"
 
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"

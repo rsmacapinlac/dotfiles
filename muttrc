@@ -4,6 +4,12 @@ source ~/.mutt/behaviors-colors
 
 # Default account
 # source ~/.mutt/boogienet.com.muttrc
+source ~/.mutt/macapinlac.com.muttrc
+
+# set sidebar to be visible by default
+set sidebar_visible
+set sidebar_width = 30
+set sidebar_folder_indent = yes
 
 # Macros for switching accounts
 macro index,pager i1 '<sync-mailbox><enter-command>source ~/.mutt/macapinlac.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to ritchie@macapinlac.com"
