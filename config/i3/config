@@ -127,8 +127,8 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Browser"
-set $ws2 "2: Mail"
-set $ws3 "3: Term"
+set $ws2 "2: Term"
+set $ws3 "3: Mail and Chat"
 set $ws4 "4: Media"
 set $ws5 "5: Games"
 set $ws6 "6: Files"
@@ -163,8 +163,8 @@ bindsym Control+Shift+7 move container to workspace number $ws7
 
 # Binding applications to workspaces
 assign [class="firefox"] $ws1
-assign [class="Thunderbird"] $ws2
-assign [class="Alacritty"] $ws3
+assign [class="Thunderbird"] $ws3
+assign [class="Alacritty"] $ws2
 assign [class="Steam"] $ws5
 assign [class="HuniePop"] $ws5
 assign [class="vlc"] $ws4
