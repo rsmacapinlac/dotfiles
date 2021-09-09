@@ -22,7 +22,7 @@ function journal() {
   fi
 
   FILEPATH=$(date "+%Y/%m/%d %a")
-  FULLPATH="$HOME/Dropbox/Journal/$FILEPATH/$FILENAME"
+  FULLPATH="$HOME/Nextcloud/Journal/$FILEPATH/$FILENAME"
   if [ ! -f $FULLPATH ]; then
     touch "$FULLPATH"
   fi
