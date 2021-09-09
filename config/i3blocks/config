@@ -124,7 +124,7 @@ signal=10
 #
 # The battery instance defaults to 0.
 [battery]
-label=⚡
+label=⚡ 
 command=acpi | awk '{ print $3, $4 }' | tr -d \,
 interval=30
 
