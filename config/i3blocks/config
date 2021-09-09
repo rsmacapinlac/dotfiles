@@ -65,12 +65,14 @@ markup=none
 #separator=false
 
 [caps-lock]
-command=xset -q | grep Cap | awk '{ print $2, $3, $4 }'
+label=🄰 
+command=xset -q | grep Cap | awk '{ print $4 }'
 interval=once
 signal=10
 
 [num-lock]
-command=xset -q | grep Num | awk '{ print $6, $7, $8 }'
+label=🔢 
+command=xset -q | grep Num | awk '{ print $8 }'
 interval=once
 signal=10
 
