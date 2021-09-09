@@ -64,6 +64,11 @@ markup=none
 #interval=-1
 #separator=false
 
+[caps-lock]
+command=xset -q | grep Cap | awk '{ print $2, $3, $4 }'
+interval=once
+signal=10
+
 [num-lock]
 command=xset -q | grep Num | awk '{ print $6, $7, $8 }'
 interval=once
@@ -119,7 +124,7 @@ signal=10
 #
 # The battery instance defaults to 0.
 [battery]
-label=⚡ 
+label=⚡
 command=acpi | awk '{ print $3, $4 }' | tr -d \,
 interval=30
 
