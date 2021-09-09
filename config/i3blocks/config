@@ -64,15 +64,25 @@ markup=none
 #interval=-1
 #separator=false
 
-[ipaddress]
-label=IP:
-command=INTERFACE=wlp2s0 $SCRIPT_DIR/iface/iface
-interval=-1
+[num-lock]
+command=xset -q | grep Num | awk '{ print $6, $7, $8 }'
+interval=once
+signal=10
 
-[disk]
-label=NAS (daikichi)
-command=DIR=/media/Media $SCRIPT_DIR/disk/disk -n
-interval=30
+# Print the last command entered in Bash
+# [history]
+# command=inotifywait -qq -e close_write ~/.bash_history; tail -1 ~/.bash_history
+# interval=repeat
+
+#[ipaddress]
+#label=IP:
+#command=INTERFACE=wlan0 $SCRIPT_DIR/iface/iface
+#interval=-1
+
+#[disk]
+#label=NAS (daikichi)
+#command=DIR=/media/Media $SCRIPT_DIR/disk/disk -n
+#interval=30
 
 # Network interface monitoring
 #
@@ -86,7 +96,7 @@ interval=30
 #separator=false
 
 #[wifi]
-#INTERFACE=wlp2w0
+#INTERFACE=wlan0
 #label=wifi:
 #interval=10
 #separator=false
@@ -108,11 +118,10 @@ interval=30
 # Battery indicator
 #
 # The battery instance defaults to 0.
-# [battery]
-# label=BAT
-#label=⚡
-# interval=30
-
+[battery]
+label=⚡ 
+command=acpi | awk '{ print $3, $4 }' | tr -d \,
+interval=30
 
 # Date Time
 #
@@ -150,11 +159,11 @@ interval=30
 #
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#KEY=CAPS
-#markup=pango
-#interval=once
-#signal=11
+# [keyindicator]
+# KEY=CAPS
+# markup=pango
+# interval=once
+# signal=11
 
 #[keyindicator]
 #KEY=NUM
