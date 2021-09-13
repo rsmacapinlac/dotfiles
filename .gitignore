@@ -1,2 +1,4 @@
 # Ignore Mutt password files
 mutt/pwd*
+mutt/boogienet.com/cache
+mutt/macapinlac.com/cache
