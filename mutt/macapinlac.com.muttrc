@@ -19,7 +19,7 @@ unset signature
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
-mailboxes "=INBOX" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=!Packages" "=!Projects" "=!Projects/Andrew's Computer Build" "=!Projects/Edmonton Condo" "=Grade 5 - Chyler"
+mailboxes "=INBOX" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=!Packages" "=!Projects" "=!Projects/Andrew's Computer Build" "=!Projects/Edmonton Condo" "=ESS"  "=Grade 5 - Chyler" "=Grade 6 - Mackenzee"
 
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"

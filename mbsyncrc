@@ -16,8 +16,8 @@ Inbox /home/ritchie/.local/share/mail/ritchie@macapinlac.com/INBOX
 
 Channel ritchie@macapinlac.com
 Expunge Both
-Master :ritchie@macapinlac.com-remote:
-Slave :ritchie@macapinlac.com-local:
+Far :ritchie@macapinlac.com-remote:
+Near :ritchie@macapinlac.com-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
@@ -42,8 +42,8 @@ Inbox /home/ritchie/.local/share/mail/rsmacapinlac@boogienet.com/INBOX
 
 Channel rsmacapinlac@boogienet.com
 Expunge Both
-Master :rsmacapinlac@boogienet.com-remote:
-Slave :rsmacapinlac@boogienet.com-local:
+Far :rsmacapinlac@boogienet.com-remote:
+Near :rsmacapinlac@boogienet.com-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
@@ -67,8 +67,8 @@ ExpireUnread no
 
 #Channel rsmacapinlac@gmail.com
 #Expunge Both
-#Master :rsmacapinlac@gmail.com-remote:
-#Slave :rsmacapinlac@gmail.com-local:
+#Far:rsmacapinlac@gmail.com-remote:
+#Near:rsmacapinlac@gmail.com-local:
 #Patterns * !"[Gmail]/All Mail"
 #Create Both
 #SyncState *
