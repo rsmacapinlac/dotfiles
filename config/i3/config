@@ -47,6 +47,7 @@ exec --no-startup-id nm-applet
 
 exec --no-startup-id blueman-applet
 exec --no-startup-id nextcloud
+exec --no-startup-id ~/.config/i3/scripts/screens.sh
 exec --no-startup-id feh --bg-scale --bg-fill --randomize ~/Nextcloud/Wallpapers
 
 # Use pactl to adjust volume in PulseAudio.
@@ -62,6 +63,7 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+bindsym Control+shift+r exec --no-startup-id feh --bg-scale --bg-fill --randomize ~/Nextcloud/Wallpapers
 # start a terminal
 bindsym $mod+Return exec alacritty
 
@@ -141,16 +143,16 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace $ws1 output eDP1 DP2
-workspace $ws2 output eDP1 DP2
-workspace $ws3 output eDP1 DP2
-workspace $ws4 output eDP1 DP2
-workspace $ws5 output eDP1 DP2
-workspace $ws6 output eDP1 DP2
-workspace $ws7 output DP2
-workspace $ws8 output DP2
-workspace $ws9 output DP2
-workspace $ws10 output DP2
+#workspace $ws1 output eDP1 DP2
+#workspace $ws2 output eDP1 DP2
+#workspace $ws3 output eDP1 DP2
+#workspace $ws4 output eDP1 DP2
+#workspace $ws5 output eDP1 DP2
+#workspace $ws6 output eDP1 DP2
+#workspace $ws7 output DP2
+#workspace $ws8 output DP2
+#workspace $ws9 output DP2
+#workspace $ws10 output DP2
 
 # switch to workspace
 bindsym Control+1 workspace number $ws1
