@@ -179,9 +179,10 @@ bindsym Control+Shift+9 move container to workspace number $ws9
 bindsym Control+Shift+0 move container to workspace number $ws10
 
 # Binding applications to workspaces
-assign [class="firefox"] $ws1
+# assign [class="firefox"] $ws1
 assign [class="Thunderbird"] $ws3
-assign [class="Alacritty"] $ws2
+assign [class="Slack"] $ws3
+# assign [class="Alacritty"] $ws2
 assign [class="Steam"] $ws5
 assign [class="HuniePop"] $ws5
 assign [class="vlc"] $ws4
