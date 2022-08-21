@@ -4,47 +4,28 @@ set imap_user = "rsmacapinlac@boogienet.com"
 set sendmail = "msmtp -a rsmacapinlac@boogienet.com"
 
 # mbsync drops mail here
-set folder = "/home/ritchie/.local/share/mail/rsmacapinlac@boogienet.com"
+set folder = "/home/ritchie/Mail/boogienet.com"
 
 set from = "rsmacapinlac@boogienet.com"
-set realname = "Ritchie"
+set realname = "Ritchie Macapinlac"
 # set folder = "imaps://imap.gmail.com:993"
 
 unmailboxes *
 unalternates *
 unset signature
 
-set ssl_starttls = yes
-set ssl_force_tls = yes
-
-mailboxes "=INBOX" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=BreakfastTable.ca migration to WP" "=Receipts and Invoices"
-
 set spoolfile = "+INBOX"
-set postponed = "+[Gmail]/Drafts"
-set record = "+[Gmail]/Sent Mail"
-set trash = "+[Gmail]/Trash"
+set postponed = "+Drafts"
+#set record = "+[Gmail]/Sent Mail"
+#set trash = "+[Gmail]/Trash"
 
-set header_cache = ~/.mutt/boogienet.com/cache/headers
-set message_cachedir = ~/.mutt/boogienet.com/cache/bodies
-set certificate_file = ~/.mutt/boogienet.com/certificates
-
-bind index,pager gg noop
-bind index,pager g noop
-bind index,pager M noop
-bind index,pager C noop
-bind index gg first-entry
-macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
-macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox"
-# macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox"
-macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "go to drafts"
-macro index,pager Md ";<save-message>=[Gmail]/Drafts<enter>" "move mail to drafts"
-# macro index,pager Cd ";<copy-message>=[Gmail]/Drafts<enter>" "copy mail to drafts"
-macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>" "go to sent"
-macro index,pager Ms ";<save-message>=[Gmail]/Sent Mail<enter>" "move mail to sent"
-# macro index,pager Cs ";<copy-message>=[Gmail]/Sent Mail<enter>" "copy mail to sent"
-# macro index,pager gS "<change-folder>=[Gmail]/Spam<enter>" "go to spam"
-# macro index,pager MS ";<save-message>=[Gmail]/Spam<enter>" "move mail to spam"
-# macro index,pager CS ";<copy-message>=[Gmail]/Spam<enter>" "copy mail to spam"
-macro index,pager gt "<change-folder>=[Gmail]/Trash<enter>" "go to trash"
-macro index,pager Mt ";<save-message>=[Gmail]/Trash<enter>" "move mail to trash"
-# macro index,pager Ct ";<copy-message>=[Gmail]/Trash<enter>" "copy mail to trash"
+mailboxes "=INBOX"
+mailboxes "=Drafts"
+mailboxes "=Receipts and Invoices"
+mailboxes "=zzz - Automated"
+mailboxes "=zzz - Automated/Hosting Plugin Alerts"
+mailboxes "=zzz - Automations"
+mailboxes "=zzz - Automations/MonthlyReport"
+mailboxes "=zzz - Automations/Weekly"
+mailboxes "=zzz - Reference"
+mailboxes "=zzz - Reference/Financials"

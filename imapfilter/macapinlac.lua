@@ -11,20 +11,13 @@ options.expunge = true
 ----  Accounts  --
 ------------------
 
--- Utility function to get IMAP password from file
-function get_imap_password(file)
-  local home = os.getenv("HOME")
-  local file = home .. "/.imapfilter/" .. file
-  local str = io.open(file):read()
-  return str;
-end
-
 ---- Connects to "imap1.mail.server", as user "user1" with "secret1" as
 -- password is saved in a text
+status, password = pipe_from('pass Email/ritchie@macapinlac.com')
 account = IMAP {
     server = 'imap.gmail.com',
     username = 'ritchie@macapinlac.com',
-    password = get_imap_password(".macapinlac.com"),
+    password = password, 
     ssl = "tls1"
 }
 
