@@ -11,7 +11,7 @@ options.expunge = true
 ----  Accounts  --
 ------------------
 
----- Connects to "imap1.mail.server", as user "user1" with "secret1" as
+-- Connects to "imap1.mail.server", as user "user1" with "secret1" as
 -- password is saved in a text
 status, password = pipe_from('pass Email/ritchie@macapinlac.com')
 account = IMAP {
@@ -47,26 +47,33 @@ ess_volunteer:move_messages(account['ESS/Volunteer Emails'])
 -- ess_grade6:move_messages(account['ESS/Classroom News/Grade 6 - Mackenzee'])
 
 -- shopping / promotions
-shopping    = account.INBOX:contain_to('ritchie+promotions@macapinlac.com') +
-              account.INBOX:contain_to('ritchie+promotion@macapinlac.com') +
-              -- Ollie Quinn
-              account.INBOX:contain_from('latest@email.oqspecs.com')
+shopping = account.INBOX:contain_to('ritchie+promotions@macapinlac.com') +
+           account.INBOX:contain_to('ritchie+promotion@macapinlac.com') +
+           -- Ollie Quinn
+           account.INBOX:contain_from('latest@email.oqspecs.com')
 
 shopping:move_messages(account['zzz - Automated/Shopping'])
 
 -- Village at Walker Lakes related
-villagewl   = account.INBOX:contain_from('Pagnihotri@kdmmgmt.ca')
+villagewl = account.INBOX:contain_from('Pagnihotri@kdmmgmt.ca')
 villagewl:move_messages(account['zzz - Village at Walker Lakes/KDM Management'])
 
 -- random banking stuff (sometimes important)
-banking     = account.INBOX:contain_from('NO_REPLY@communications.bpi.com.ph')
+banking = account.INBOX:contain_from('NO_REPLY@communications.bpi.com.ph')
 banking:move_messages(account['zzz - Automated/Banking'])
+
+-- allowance emails
+simplii = account.INBOX:contain_from('notify@payments.interac.ca') * (
+            account.INBOX:contain_subject('INTERAC e-Transfer: Your money transfer to MACKENZEE CHARL MACAPINLAC was deposited.') + 
+            account.INBOX:contain_subject('INTERAC e-Transfer: Your money transfer to CHYLER ROWAN C MACAPINLAC was deposited.')
+          )
+simplii:move_messages(account['Receipts and Invoices'])
 
 -- Jobs!
 jobs        = account.INBOX:contain_from('jobs-noreply@linkedin.com') +
               account.INBOX:contain_from('hello@creativeclass.co')
-
 jobs:move_messages(account['zzz - Automated/Jobs'])
+
 -- Ugh, just delete it!
 ugh         = account.INBOX:contain_from('e-service@acmsmail.china-airlines.com')
 ugh:delete_messages()
