@@ -7,13 +7,27 @@ options.subscribe = true
 options.create = true
 options.expunge = true
 
+-- Utility function to get IMAP password from file
+function get_imap_password(file)
+  local home = os.getenv("HOME")
+  local file = home .. "/" .. file
+  local str = io.open(file):read()
+  return str;
+end
 ------------------
 ----  Accounts  --
 ------------------
 
 -- Connects to "imap1.mail.server", as user "user1" with "secret1" as
 -- password is saved in a text
-status, password = pipe_from('pass Email/ritchie@macapinlac.com')
+-- status, password = pipe_from('pass Email/ritchie@macapinlac.com')
+password = get_imap_password('.ritchie@macapinlac.com')
+function get_imap_password(file)
+  local home = os.getenv("HOME")
+  local file = home .. "/" .. file
+  local str = io.open(file):read()
+  return str;
+end
 account = IMAP {
     server = 'imap.gmail.com',
     username = 'ritchie@macapinlac.com',
@@ -71,7 +85,8 @@ simplii:move_messages(account['Receipts and Invoices'])
 
 -- Jobs!
 jobs        = account.INBOX:contain_from('jobs-noreply@linkedin.com') +
-              account.INBOX:contain_from('hello@creativeclass.co')
+              account.INBOX:contain_from('hello@creativeclass.co') +
+              account.INBOX:contain_to('ritchie+jobs@macapinlac.com')
 jobs:move_messages(account['zzz - Automated/Jobs'])
 
 -- Ugh, just delete it!

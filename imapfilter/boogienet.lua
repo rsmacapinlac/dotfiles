@@ -40,11 +40,21 @@ alerts = account.INBOX:contain_from('wordpress@alifewithgusto.com') +
 alerts:move_messages(account['zzz - Automated.Hosting Plugin Alerts'])
 
 
+-- Move for Monthly N8N Automations
+weekly = account.INBOX:contain_from('noreply@opensrs.email')
+
+weekly:move_messages(account['zzz - Automations.MonthlyReport'])
+
 -- Move for N8N Automations
 weekly = account.INBOX:contain_from('support@boogienet.com') *
          account.INBOX:contain_subject('Weekly report for All Websites')
 
 weekly:move_messages(account['zzz - Automations.Weekly'])
+
+-- delete successful InfiniteWP message
+infinitewp_success = account.INBOX:contain_from('gwen@boogienet.com') *
+                     account.INBOX:contain_subject('InfiniteWP | Everything is up to date.')
+infinitewp_success:delete_messages()
 
 -- Ugh, just delete it!
 -- ugh         = account.INBOX:contain_from('e-service@acmsmail.china-airlines.com')
