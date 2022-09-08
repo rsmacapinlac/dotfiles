@@ -56,6 +56,11 @@ infinitewp_success = account.INBOX:contain_from('gwen@boogienet.com') *
                      account.INBOX:contain_subject('InfiniteWP | Everything is up to date.')
 infinitewp_success:delete_messages()
 
+-- move this message into the automations folder for n8n
+infinitewp_updates = account.INBOX:contain_from('gwen@boogienet.com') *
+                     account.INBOX:contain_subject('InfiniteWP | New Updates Available.')
+infinitewp_updates:move_messages(account['zzz - Automations.InfiniteWP-Updates'])
+
 -- Ugh, just delete it!
 -- ugh         = account.INBOX:contain_from('e-service@acmsmail.china-airlines.com')
 -- ugh:delete_messages()
