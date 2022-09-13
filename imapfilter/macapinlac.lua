@@ -57,8 +57,20 @@ newsletters:move_messages(account['zzz - Automated/Newsletters'])
 ess_volunteer = account.INBOX:contain_from('no-reply@onvolunteers.com')
 ess_volunteer:move_messages(account['ESS/Volunteer Emails'])
 
--- ess_grade6  = account['ESS']:contain_bcc('grade6_parents@ess.vancouver.bc.ca')
--- ess_grade6:move_messages(account['ESS/Classroom News/Grade 6 - Mackenzee'])
+ess_principal = account.INBOX:contain_from('principal@ess.vancouver.bc.ca') *
+                account.INBOX:contain_bcc('ess_parents@ess.vancouver.bc.ca')
+ess_principal:move_messages(account['ESS/School Announcements'])
+
+ess_sports = account.INBOX:contain_from('douo@ess.vancouver.bc.ca')
+ess_sports:move_messages(account['ESS/Sports'])
+
+ess_grade6  = account.INBOX:contain_from('buan@ess.vancouver.bc.ca') *
+              account.INBOX:contain_bcc('grade6_parents@ess.vancouver.bc.ca')
+ess_grade6:move_messages(account['ESS/Classroom News/Grade 6 - Chyler'])
+
+ess_grade7  = account.INBOX:contain_from('johnson@ess.vancouver.bc.ca') *
+              account.INBOX:contain_subject('Grade 7 Newsletter')
+ess_grade7:move_messages(account['ESS/Classroom News/Grade 7 - Mackenzee'])
 
 -- shopping / promotions
 shopping = account.INBOX:contain_to('ritchie+promotions@macapinlac.com') +
