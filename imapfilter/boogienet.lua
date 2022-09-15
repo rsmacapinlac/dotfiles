@@ -61,6 +61,8 @@ infinitewp_updates = account.INBOX:contain_from('gwen@boogienet.com') *
                      account.INBOX:contain_subject('InfiniteWP | New Updates Available.')
 infinitewp_updates:move_messages(account['zzz - Automations.InfiniteWP-Updates'])
 
+
 -- Ugh, just delete it!
--- ugh         = account.INBOX:contain_from('e-service@acmsmail.china-airlines.com')
--- ugh:delete_messages()
+ugh         = account.INBOX:contain_from('boogiene@rcentral503.webserversystems.com') *
+              account.INBOX:contain_subject('Cron')
+ugh:delete_messages()
